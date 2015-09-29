@@ -1,0 +1,17 @@
+bundle agent edit_motd
+{
+
+  files:
+    "/etc/motd"
+      edit_line => my_motd;
+      create => "true";
+
+}
+
+bundle agent edit_line my_motd
+{
+
+  insert_lines:
+    "Welcome to ${sys.fqhost}!
+This is a system managed by CFEngine."
+}
