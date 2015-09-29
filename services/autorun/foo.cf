@@ -3,7 +3,7 @@ bundle agent foo
 
   files:
   "/tmp/foo"
-     perms => "0775";
+     perms => "0775",
      create => "true";
 
   reports:
