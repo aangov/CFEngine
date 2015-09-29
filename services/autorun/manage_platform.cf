@@ -4,7 +4,7 @@ bundle agent manage_platform
       "tags" slist => { "autorun" };
 
   methods:
-       "Manage platform Layer" usebundle => "platform";
+       "Manage platform Layer" usebundle => platform;
 
   reports:
        "Entry poing of the company policies";
