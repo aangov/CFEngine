@@ -13,5 +13,5 @@ bundle edit_line my_motd
 
   insert_lines:
     "Welcome to ${sys.fqhost}!
-This is a system managed by CFEngine."
+This is a system managed by CFEngine.";
 }
