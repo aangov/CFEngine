@@ -2,7 +2,7 @@ bundle agent os_common
 {
 
   methods:
-       "Use report OS bundle" usebundle => report_os_sys;
+       "Use report OS bundle" usebundle => report_sys_os;
        "Create a file called foo" usebundle => foo;
        
 }
