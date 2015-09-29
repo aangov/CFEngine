@@ -4,6 +4,6 @@ bundle agent platform
       "tags" slist => { "autorun" };
 
   methods:
-       "" usebundle => "os_common"
+       "" usebundle => "os_common";
 
 }
