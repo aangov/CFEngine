@@ -1,0 +1,12 @@
+bundle agent manage_platform
+{
+  meta:
+      "tags" slist => { "autorun" };
+
+  methods:
+       "Manage platform Layer" usebundle => "platform"
+
+  reports:
+       "Entry poing of the company policies"
+
+}
