@@ -1,0 +1,8 @@
+bundle agent os_common
+{
+
+  methods:
+       "Use report OS bundle" usebundle => "report_os_sys" 
+       "" usebundle => "foo"
+       
+}

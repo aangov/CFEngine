@@ -1,0 +1,11 @@
+bundle agent foo
+{
+
+  files:
+  "/tmp/foo"
+     perms => "0775";
+     create => "true";
+
+  reports:
+  "Created a file in /tmp called foo with permissions 0775";
+}

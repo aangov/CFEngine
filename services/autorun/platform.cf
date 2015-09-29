@@ -1,0 +1,9 @@
+bundle agent platform
+{
+  meta:
+      "tags" slist => { "autorun" };
+
+  methods:
+       "" usebundle => "os_common"
+
+}
