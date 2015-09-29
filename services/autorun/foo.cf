@@ -7,7 +7,7 @@ bundle agent foo
      create => "true";
 
   reports:
-  "Created a file in /tmp called foo with permissions 0775";
+  "Created a file in /tmp called foo with permissions 0640";
 }
 
 body perms system
