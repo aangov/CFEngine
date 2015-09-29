@@ -9,3 +9,8 @@ bundle agent foo
   reports:
   "Created a file in /tmp called foo with permissions 0775";
 }
+
+body perms system
+{
+mode  => "0640";               # Set permissions to "0640"
+}
