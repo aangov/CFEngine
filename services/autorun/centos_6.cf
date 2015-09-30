@@ -16,7 +16,7 @@ bundle agent centos_6 {
 bundle edit_line edit_yum_conf(proxy) {
 
   insert_lines:
-      proxy=${proxy} location = eof;
+      "proxy=${proxy}" location = eof;
 }
 
 body location eof {
