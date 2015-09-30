@@ -9,7 +9,7 @@ bundle agent centos_6 {
     "/etc/yum.conf"
     perms => mo("644","root"),
     create => "true",
-    edit_line => edit_yum_conf("${centos_6.yum_proxy}"),
+    edit_line => edit_yum_conf("${centos_6.yum_proxy}";
 
 }
 
