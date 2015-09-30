@@ -1,0 +1,32 @@
+body common control
+{
+	bundlesequence => { "pkg_common" };
+	inputs => { "libraries/cfengine_stdlib.cf" };
+}
+
+bundle agent pkg_common {
+
+	vars:
+	"centos_6_pkgs"
+ 	    slist => {        # list of packages we want
+	                  "ntp",
+	                  "vim"
+		     };
+		     
+	"debian_8_pkgs"
+            slist => {        
+	                  "ntp",
+			  "vim"
+                     };
+
+        packages:
+	   "$centos_6_pkgs"
+
+	    package_policy => "add", 
+	    package_method => "yum"; 
+        
+	  "$debian_8_pkgs"
+
+            package_policy => "add",     
+	    package_method => "apt";
+}
