@@ -1,9 +1,3 @@
-body common control
-{
-	bundlesequence => { "pkg_common" };
-	inputs => { "lib/3.7/stdlib.cf" };
-}
-
 bundle agent pkg_common {
 
 	vars:
@@ -20,12 +14,12 @@ bundle agent pkg_common {
                      };
 
         packages:
-	   "$centos_6_pkgs"
+	   "$(centos_6_pkgs)"
 
 	    package_policy => "add", 
 	    package_method => yum; 
         
-	  "$debian_8_pkgs"
+	  "$(debian_8_pkgs)"
 
             package_policy => "add",     
 	    package_method => apt;
