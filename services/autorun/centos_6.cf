@@ -1,0 +1,27 @@
+bundle agent centos_6 {
+
+  vars:
+
+    "yum_proxy"    string => "http://aptutl01.webhuis.nl:3142/";
+
+  files:
+     
+    "/etc/yum.conf"
+    perms => mo("644","root"),
+    create => "true",
+    edit_line => edit_yum_conf("${centos_6.yum_proxy}"),
+
+}
+
+bundle edit_line edit_yum_conf(proxy) {
+
+    insert_lines:
+          "proxy="${yum_proxy}" location = eof;
+}
+
+body location eof {
+    
+    select_line_matching => "distroverpkg=centos-release.*";
+    before_after => "after";
+}
+    
