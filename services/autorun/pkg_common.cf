@@ -1,7 +1,7 @@
 body common control
 {
 	bundlesequence => { "pkg_common" };
-	inputs => { "libraries/cfengine_stdlib.cf" };
+	inputs => { "lib/3.7/stdlib.cf" };
 }
 
 bundle agent pkg_common {
