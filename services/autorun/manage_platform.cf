@@ -7,6 +7,6 @@ bundle agent manage_platform
        "Manage platform Layer" usebundle => platform;
 
   reports:
-       "Entry poing of the company policies";
+       "Entry point of the company policies";
 
 }

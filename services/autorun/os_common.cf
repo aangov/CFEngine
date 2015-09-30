@@ -6,4 +6,6 @@ bundle agent os_common
        "Create a file called foo" usebundle => foo;
        "Edit motd" usebundle => edit_motd;
 
+  centos_6::
+       "Use centos 6 policy" usebundle => centos_6;
 }
