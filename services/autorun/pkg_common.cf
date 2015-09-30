@@ -23,10 +23,10 @@ bundle agent pkg_common {
 	   "$centos_6_pkgs"
 
 	    package_policy => "add", 
-	    package_method => "yum"; 
+	    package_method => yum; 
         
 	  "$debian_8_pkgs"
 
             package_policy => "add",     
-	    package_method => "apt";
+	    package_method => apt;
 }
