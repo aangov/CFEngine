@@ -1,0 +1,17 @@
+bundle agent centos_packages {
+
+        vars:
+        "centos_6_pkgs"
+            slist => {        # list of packages we want
+                          "ntp",
+                          "vim"
+                     };
+
+
+        packages:
+           "$(centos_6_pkgs)"
+
+            package_policy => "add",
+            package_method => yum;
+}
+
