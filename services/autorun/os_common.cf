@@ -8,7 +8,7 @@ bundle agent os_common
 
   centos_6::
        "Use centos 6 policy" usebundle => centos_6;
-       "Install base packages" usebundle => pkg_common;
+       "Install base packages" usebundle => centos_packages;
 
   debian_8::
         "Install base packages" usebundle => pkg_common;
