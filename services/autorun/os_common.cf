@@ -5,6 +5,7 @@ bundle agent os_common
        "Use report OS bundle" usebundle => report_sys_os;
        "Create a file called foo" usebundle => foo;
        "Edit motd" usebundle => edit_motd;
+       "Modify sshd configuration" usebundle => sshd_config;
 
   centos_6::
        "Use centos 6 policy" usebundle => centos_6;
