@@ -10,10 +10,10 @@ bundle agent sshd_config {
 bundle edit_line edit_sshd_config(sshd_config) {
 
 	  insert_lines:
-	        "PermitRootLogin no;
+	        "PermitRootLogin no" location => auth;
 }
 
-body location eof {
+body location auth {
 
 	    select_line_matching => "# Authentication:.*";
 	        before_after => "after";
