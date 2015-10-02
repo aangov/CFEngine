@@ -13,7 +13,7 @@ bundle edit_line edit_sshd_config(sshd_config) {
 	        "PermitRootLogin no" location => auth;
 
           reports:
-	        "Modifying sshd_config to forbid root login...";
+	        "Modifying $(this.bundles) to forbid root login...";
 }
 
 body location auth {
