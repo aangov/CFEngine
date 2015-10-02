@@ -13,13 +13,22 @@ bundle edit_line edit_sshd_config(sshd_config) {
 	        "PermitRootLogin no" location => auth;
 
           reports:
-	        "Modifying sshd_config to forbid root login..."
+	        "Modifying sshd_config to forbid root login...";
 }
 
 body location auth {
 
 	    select_line_matching => "# Authentication:.*";
 	        before_after => "after";
+}
+
+bundle agent restart_sshd {
+
+    commands:
+    "/etc/init.d/sshd restart"
+     handle => "restart_sshd",
+     comment => "restarting sshd";
+
 }
 
 
