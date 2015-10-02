@@ -1,0 +1,22 @@
+bundle agent sshd_config {
+
+    files:
+     "/etc/ssh/sshd_config"
+      create => "true",
+      edit_line => edit_sshd_config("${sshd_config.sshd_config}");
+
+}
+
+bundle edit_line edit_sshd_config(sshd_config) {
+
+	  insert_lines:
+	        "PermitRootLogin no;
+}
+
+body location eof {
+
+	    select_line_matching => "# Authentication:.*";
+	        before_after => "after";
+}
+
+
