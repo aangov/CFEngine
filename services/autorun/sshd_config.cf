@@ -19,6 +19,12 @@ bundle edit_line edit_sshd_config(sshd_config) {
       "Modifying $(file) with bundle $(this.bundle) to forbid root login...";
 }
 
+body location auth {
+
+	            select_line_matching => "# Authentication:.*";
+		                    before_after => "after";
+}
+
 bundle agent copy_ssh_key {
 
     vars:
@@ -37,12 +43,7 @@ bundle agent copy_ssh_key {
       authorized_keys_modified::
       "Public key added to $(file).";
 
-body location auth {
-
-	    select_line_matching => "# Authentication:.*";
-	        before_after => "after";
 }
-
 
     restart_sshd::
      commands:
