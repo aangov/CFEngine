@@ -2,16 +2,16 @@ bundle agent sshd_config {
 
     files:
      "/etc/ssh/sshd_config"
-      create => "true",
+      create    => "true",
       edit_line => edit_sshd_config("${sshd_config.sshd_config}"),
-      classes => if_repaired("restart_sshd");
+      classes   => if_repaired("restart_sshd");
 
     commands:
      restart_sshd::
       "/etc/init.d/sshd restart"
        handle  => "restart_sshd",
-       comment => "restarting sshd";
-       classes   => if_repaired"(sshd_restart)";
+       comment => "restarting sshd",
+       classes => if_repaired"(sshd_restart)";
 
     reports:
      sshd_restart::
