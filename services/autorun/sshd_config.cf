@@ -6,6 +6,17 @@ bundle agent sshd_config {
       edit_line => edit_sshd_config("${sshd_config.sshd_config}"),
       classes => if_repaired("restart_sshd");
 
+    commands:
+    restart_sshd:
+      "/etc/init.d/sshd restart"
+       handle  => "restart_sshd",
+       comment => "restarting sshd";
+       classes   => if_repaired"(sshd_restart)";
+
+    reports:
+    sshd_restart::
+      "Restarting ssh daemon..."
+
 }
 
 bundle edit_line edit_sshd_config(sshd_config) {
@@ -15,18 +26,9 @@ bundle edit_line edit_sshd_config(sshd_config) {
     insert_lines:
       "PermitRootLogin yes" location => auth;
 
-    commands:
-    restart_sshd:
-      "/etc/init.d/sshd restart"
-       handle  => "restart_sshd",
-       comment => "restarting sshd";
-       classes   => if_repaired"(sshd_restart)";
-
     reports:
       "Modifying $(file) with bundle $(this.bundle) to forbid root login...";
 
-    sshd_restart::
-      "Restarting ssh daemon..."
 }
 
 body location auth {
