@@ -15,7 +15,7 @@ bundle agent sshd_config {
 
     reports:
      sshd_restart::
-      "Restarting ssh daemon..."
+      "Restarting ssh daemon...";
 
 }
 
