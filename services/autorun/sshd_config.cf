@@ -19,7 +19,7 @@ bundle edit_line edit_sshd_config(sshd_config) {
       "Modifying $(file) with bundle $(this.bundle) to forbid root login...";
 }
 
-bundle copy_ssh_key {
+bundle agent copy_ssh_key {
 
     vars:
 	  "files[authorized_keys]"  string => "/home/$(users)/.ssh/authorized_keys";
