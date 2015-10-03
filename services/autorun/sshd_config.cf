@@ -35,7 +35,7 @@ bundle agent copy_ssh_key {
 
     reports:
       authorized_keys_modified::
-      "Public key added to $(file)."
+      "Public key added to $(file).";
 
 body location auth {
 
