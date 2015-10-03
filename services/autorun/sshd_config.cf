@@ -7,14 +7,14 @@ bundle agent sshd_config {
       classes => if_repaired("restart_sshd");
 
     commands:
-    restart_sshd:
+     restart_sshd::
       "/etc/init.d/sshd restart"
        handle  => "restart_sshd",
        comment => "restarting sshd";
        classes   => if_repaired"(sshd_restart)";
 
     reports:
-    sshd_restart::
+     sshd_restart::
       "Restarting ssh daemon..."
 
 }
