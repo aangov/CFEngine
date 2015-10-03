@@ -11,7 +11,7 @@ bundle agent sshd_config {
       "/etc/init.d/sshd restart"
        handle  => "restart_sshd",
        comment => "restarting sshd",
-       classes => if_repaired"(sshd_restart)";
+       classes => if_repaired("sshd_restart");
 
     reports:
      sshd_restart::
